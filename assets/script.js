@@ -23,4 +23,10 @@ searchForm.addEventListener('submit', (event) => {
       <p>Humidity: ${data.main.humidity}%</p>
       <p>Wind Speed: ${data.wind.speed} m/s</p>
     `;
-  });
+ // Retrieve weather forecast data for the selected city and update the DOM
+ fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${data.name}&appid=fb58fad24a6919b14a99575e19e9ae10`)
+ .then(response => response.json())
+ .then(data => {
+   // Filter the forecast data to only include one record per day
+   const dailyData = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+ });
