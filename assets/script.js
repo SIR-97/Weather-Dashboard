@@ -29,4 +29,25 @@ searchForm.addEventListener('submit', (event) => {
  .then(data => {
    // Filter the forecast data to only include one record per day
    const dailyData = data.list.filter(item => item.dt_txt.includes('12:00:00'));
- });
+ 
+     // Create an HTML string for the 5-day forecast and update the DOM
+     const forecast = document.querySelector('#forecast');
+     forecast.innerHTML = '';
+     dailyData.forEach(day => {
+       const date = new Date(day.dt_txt).toLocaleDateString();
+       const icon = day.weather[0].icon;
+       const temp = Math.round(day.main.temp - 273.15);
+       const humidity = day.main.humidity;
+       forecast.innerHTML += `
+         <div class="card">
+           <h3>${date}</h3>
+           <p><img src="https://openweathermap.org/img/w/${icon}.png" alt="weather icon"></p>
+           <p>Temperature: ${temp}°C</p>
+           <p>Humidity: ${humidity}%</p>
+         </div>
+       `;
+     });
+   })
+   .catch(error => console.error(error));
+})
+.catch(error => console.error(error));
