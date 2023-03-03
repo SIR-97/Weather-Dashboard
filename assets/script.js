@@ -51,3 +51,32 @@ searchForm.addEventListener('submit', (event) => {
    .catch(error => console.error(error));
 })
 .catch(error => console.error(error));
+
+ // Add the searched city to the search history
+ const historyItem = document.createElement('button');
+ historyItem.textContent = city;
+ historyItem.addEventListener('click', () => {
+   // Retrieve 5-day forecast data for the selected city and update the DOM
+   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=fb58fad24a6919b14a99575e19e9ae10`)
+     .then(response => response.json())
+     .then(data => {
+       // Update the DOM with the 5-day forecast data
+       const forecast = document.querySelector('#forecast');
+       forecast.innerHTML = '';
+
+       for (let i = 0; i < data.list.length; i += 8) {
+         const forecastItem = document.createElement('div');
+         forecastItem.classList.add('forecast-item');
+ forecastItem.innerHTML = `
+   <p>${new Date(data.list[i].dt_txt).toLocaleDateString()}</p>
+   <p><img src="https://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" alt="weather icon"></p>
+   <p>Temperature: ${Math.round(data.list[i].main.temp - 273.15)}°C</p>
+   <p>Humidity: ${data.list[i].main.humidity}%</p>
+   <p>Wind Speed: ${data.list[i].wind.speed} m/s</p>
+ `;
+ forecast.appendChild(forecastItem);
+ }
+})
+.catch(error => console.error(error));
+ });
+});
