@@ -1,0 +1,100 @@
+/* import Bootstrap styles */
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+/* apply blue color theme */
+body {
+background-color: #f8f9fa;
+}
+
+/* center the search form */
+#search-form {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+background-color: #fff;
+}
+
+#search-container {
+max-width: 600px;
+padding: 20px;
+border-radius: 5px;
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* style the search input and button */
+#search-input {
+font-size: 18px;
+padding: 10px;
+border: none;
+border-radius: 5px;
+width: 70%;
+}
+
+#search-button {
+font-size: 18px;
+padding: 10px;
+border: none;
+border-radius: 5px;
+width: 100%;
+background-color: #007bff;
+color: #fff;
+margin-left: 10px;
+}
+
+#search-button:hover {
+background-color: #0069d9;
+cursor: pointer;
+}
+
+/* style the current weather section */
+#today {
+margin-top: 40px;
+padding: 20px;
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#today h2 {
+margin-top: 0;
+font-size: 28px;
+}
+
+#today p {
+font-size: 18px;
+margin: 10px 0;
+}
+
+/* style the forecast section */
+#forecast {
+margin-top: 40px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.forecast-card {
+flex-basis: calc(33.33% - 20px);
+margin-bottom: 20px;
+padding: 20px;
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-card h3 {
+margin-top: 0;
+font-size: 24px;
+}
+
+.forecast-card img {
+width: 60px;
+height: 60px;
+margin: 10px 0;
+}
+
+.forecast-card p {
+font-size: 16px;
+margin: 5px 0;
+}
