@@ -6,9 +6,9 @@ My application generates a weather dashboard that allows for the input of a city
 
 When the user searches for a city they are presented with current and predicted future conditions for that city and that city is added to the search history if searched again.
 
-When the user views the current weather conditions for that city they are presented with: The city name, the date,An icon representation of weather conditions, the temperature, the humidity, the wind speed
+When the user views the current weather conditions for that city they are presented with: The city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed
 
-When the user views future predicited weather conditions for that city they are presented with a 5-day forecast that displays:The date, an icon representation of weather conditions, the temperature and the humidity
+When the user views future predicited weather conditions for that city they are presented with a 5-day forecast that displays: The date, an icon representation of weather conditions, the temperature and the humidity
 
 [Note: js and css scripts are found within the assets folder]
 
