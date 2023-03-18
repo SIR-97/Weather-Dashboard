@@ -12,7 +12,7 @@ When the user views future predicited weather conditions for that city they are 
 
 [Note: js and css scripts are found within the assets folder]
 
-Link to deployed my application: 
+Link to deployed my application: https://github.com/SIR-97/Weather-Dashboard/settings/pages 
 
 
 ![_C__Users_Lenovo_bootcamp-challenges_Weather-Dashboard_index html](https://user-images.githubusercontent.com/119041506/226106192-f24b2c7b-989a-4968-aca2-669ea0315c19.png)
